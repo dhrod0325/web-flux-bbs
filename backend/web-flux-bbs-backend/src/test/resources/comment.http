@@ -1,0 +1,12 @@
+### 댓글 작성 요청
+POST http://localhost:8080/api/posts/1/comments
+Content-Type: application/json
+
+{
+  "content": "This is a sample comment",
+  "author": "John Doe"
+}
+
+### 댓글 리스트 가져오기 요청
+GET http://localhost:8080/api/posts/1/comments
+Content-Type: application/json

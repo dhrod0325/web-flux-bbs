@@ -1,0 +1,19 @@
+spring:
+  r2dbc:
+    url: r2dbc:mariadb://localhost:23306/flux-bbs
+    username: root
+    password: 1234
+  sql:
+    init:
+      mode: always
+      schema-locations:
+        - classpath:/schema/schema.sql
+
+  jpa:
+    defer-datasource-initialization: true
+  main:
+    allow-bean-definition-overriding: true
+
+logging:
+  level:
+    org.springframework.data.r2dbc: debug

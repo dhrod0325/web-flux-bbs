@@ -1,0 +1,15 @@
+services:
+  mariadb:
+    image: mariadb:10.6
+    container_name: mariadb
+    ports:
+      - "23306:3306"
+    environment:
+      MARIADB_ROOT_PASSWORD: 1234
+      MARIADB_DATABASE: flux-bbs
+    volumes:
+      - mariadb_data:/var/lib/mysql
+
+volumes:
+  mariadb_data:
+    driver: local
