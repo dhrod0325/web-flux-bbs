@@ -5,6 +5,7 @@ import org.mockito.Mockito;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.reactive.WebFluxTest;
 import org.springframework.http.MediaType;
+import org.springframework.test.context.bean.override.mockito.MockitoBean;
 import org.springframework.test.web.reactive.server.WebTestClient;
 import reactor.core.publisher.Mono;
 import web.flux.bbs.controller.post.PostController;
@@ -17,7 +18,7 @@ class PostControllerTest {
     @Autowired
     private WebTestClient webTestClient;
 
-    @Autowired
+    @MockitoBean
     private PostService postService;
 
     @Test
@@ -28,7 +29,8 @@ class PostControllerTest {
         postDto.setContent("Test Content");
 
         Mono<PostDto> postDtoMono = Mono.just(postDto);
-        Mockito.when(postService.createPost(Mockito.any(PostDto.class))).thenReturn(postDtoMono);
+        Mockito.when(postService.createPost(Mockito.any(PostDto.class)))
+                .thenReturn(postDtoMono);
 
         webTestClient.post()
                 .uri("/api/posts")
