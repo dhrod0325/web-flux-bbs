@@ -1,4 +1,4 @@
-package web.flux.bbs.dto;
+package web.flux.bbs.domain.post.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

@@ -1,4 +1,4 @@
-package web.flux.bbs.service;
+package web.flux.bbs.domain.post.service;
 
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -9,11 +9,11 @@ import org.springframework.http.codec.multipart.FilePart;
 import org.springframework.stereotype.Service;
 import reactor.core.publisher.Mono;
 import reactor.core.scheduler.Schedulers;
-import web.flux.bbs.domain.File;
-import web.flux.bbs.dto.FileDto;
-import web.flux.bbs.mapper.FileMapper;
-import web.flux.bbs.repository.FileRepository;
-import web.flux.bbs.repository.PostRepository;
+import web.flux.bbs.domain.post.entity.File;
+import web.flux.bbs.domain.post.dto.FileDto;
+import web.flux.bbs.domain.post.mapper.FileMapper;
+import web.flux.bbs.domain.post.repository.FileRepository;
+import web.flux.bbs.domain.post.repository.PostRepository;
 
 @RequiredArgsConstructor
 @Service

@@ -2,9 +2,11 @@ package web.flux.bbs;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.boot.autoconfigure.domain.EntityScan;
+import org.springframework.data.r2dbc.config.EnableR2dbcAuditing;
+import org.springframework.web.reactive.config.EnableWebFlux;
 
-@EntityScan(basePackages = "web.flux.bbs.domain") //
+@EnableR2dbcAuditing
+@EnableWebFlux
 @SpringBootApplication
 public class WebFluxBbsApplication {
     public static void main(String[] args) {

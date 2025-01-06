@@ -1,4 +1,4 @@
-package web.flux.bbs.controller.post;
+package web.flux.bbs.domain.post.controller;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
@@ -9,8 +9,8 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestPart;
 import org.springframework.web.bind.annotation.RestController;
 import reactor.core.publisher.Mono;
-import web.flux.bbs.dto.FileDto;
-import web.flux.bbs.service.PostFileService;
+import web.flux.bbs.domain.post.dto.FileDto;
+import web.flux.bbs.domain.post.service.PostFileService;
 
 @RequiredArgsConstructor
 @RestController

@@ -1,19 +1,18 @@
-package web.flux.bbs.domain;
+package web.flux.bbs.domain.post.entity;
+
 
 import java.time.LocalDateTime;
 import lombok.Data;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.relational.core.mapping.Table;
 
+@Table("post")
 @Data
-@Table("comments")
-public class Comment {
-
+public class Post {
     @Id
     private Long id;
-    private Long parentId;
 
-    private Long postId;
+    private String title;
     private String content;
     private String author;
 

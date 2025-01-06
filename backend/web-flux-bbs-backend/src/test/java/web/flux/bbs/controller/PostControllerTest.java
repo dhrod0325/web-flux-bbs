@@ -8,9 +8,9 @@ import org.springframework.http.MediaType;
 import org.springframework.test.context.bean.override.mockito.MockitoBean;
 import org.springframework.test.web.reactive.server.WebTestClient;
 import reactor.core.publisher.Mono;
-import web.flux.bbs.controller.post.PostController;
-import web.flux.bbs.dto.PostDto;
-import web.flux.bbs.service.PostService;
+import web.flux.bbs.domain.post.controller.PostController;
+import web.flux.bbs.domain.post.dto.PostDto;
+import web.flux.bbs.domain.post.service.PostService;
 
 @WebFluxTest(PostController.class)
 class PostControllerTest {

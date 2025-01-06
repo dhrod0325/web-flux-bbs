@@ -1,4 +1,4 @@
-package web.flux.bbs.dto;
+package web.flux.bbs.domain.post.dto;
 
 import java.time.LocalDateTime;
 import java.util.List;

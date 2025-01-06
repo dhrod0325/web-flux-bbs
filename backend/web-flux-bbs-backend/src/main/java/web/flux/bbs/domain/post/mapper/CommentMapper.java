@@ -1,9 +1,9 @@
-package web.flux.bbs.mapper;
+package web.flux.bbs.domain.post.mapper;
 
 import org.mapstruct.Mapper;
 import org.mapstruct.factory.Mappers;
-import web.flux.bbs.domain.Comment;
-import web.flux.bbs.dto.CommentDto;
+import web.flux.bbs.domain.post.entity.Comment;
+import web.flux.bbs.domain.post.dto.CommentDto;
 
 @Mapper
 public interface CommentMapper {

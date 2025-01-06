@@ -1,4 +1,4 @@
-package web.flux.bbs.service;
+package web.flux.bbs.domain.post.service;
 
 import java.time.LocalDateTime;
 import java.util.ArrayList;
@@ -10,10 +10,10 @@ import org.springframework.stereotype.Service;
 import org.springframework.util.ObjectUtils;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
-import web.flux.bbs.domain.Comment;
-import web.flux.bbs.dto.CommentDto;
-import web.flux.bbs.mapper.CommentMapper;
-import web.flux.bbs.repository.CommentRepository;
+import web.flux.bbs.domain.post.entity.Comment;
+import web.flux.bbs.domain.post.dto.CommentDto;
+import web.flux.bbs.domain.post.mapper.CommentMapper;
+import web.flux.bbs.domain.post.repository.CommentRepository;
 
 @RequiredArgsConstructor
 @Service
@@ -64,12 +64,9 @@ public class PostCommentService {
 
     private List<CommentDto> buildCommentHierarchy(List<CommentDto> comments) {
         Map<Long, List<CommentDto>> groupedByParentId = comments.stream()
-                .collect(Collectors.groupingBy(comment -> comment.getParentId() == null ? -1L : comment.getParentId() // null 값을 -1로 대체
-                ));
+                .collect(Collectors.groupingBy(comment -> comment.getParentId() == null ? -1L : comment.getParentId()));
 
-        List<CommentDto> rootComments = groupedByParentId
-                .getOrDefault(-1L, new ArrayList<>());
-
+        List<CommentDto> rootComments = groupedByParentId.getOrDefault(-1L, new ArrayList<>());
         rootComments.forEach(rootComment -> populateChildren(rootComment, groupedByParentId));
 
         return rootComments;
@@ -77,8 +74,7 @@ public class PostCommentService {
 
     private void populateChildren(CommentDto parent, Map<Long, List<CommentDto>> groupedByParentId) {
         List<CommentDto> children = groupedByParentId.getOrDefault(parent.getId(), new ArrayList<>());
-        parent.setChildren(children); // children 필드를 추가했다고 가정
-
+        parent.setChildren(children);
         children.forEach(child -> populateChildren(child, groupedByParentId));
     }
 }

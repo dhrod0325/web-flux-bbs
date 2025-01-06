@@ -1,4 +1,4 @@
-package web.flux.bbs.dto;
+package web.flux.bbs.domain.post.dto;
 
 import java.util.List;
 import lombok.AllArgsConstructor;
@@ -9,6 +9,6 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 public class PagedResponse<T> {
-    private long totalElements; // 총 게시글 수
-    private List<T> content;    // 데이터 리스트
+    private long totalElements;
+    private List<T> content;
 }

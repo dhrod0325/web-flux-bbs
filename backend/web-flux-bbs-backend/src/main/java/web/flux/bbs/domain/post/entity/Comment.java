@@ -1,4 +1,4 @@
-package web.flux.bbs.domain;
+package web.flux.bbs.domain.post.entity;
 
 import java.time.LocalDateTime;
 import lombok.Data;
@@ -6,14 +6,16 @@ import org.springframework.data.annotation.Id;
 import org.springframework.data.relational.core.mapping.Table;
 
 @Data
-@Table("file")
-public class File {
+@Table("comments")
+public class Comment {
+
     @Id
     private Long id;
+    private Long parentId;
 
-    private Long postId; // 글 ID와 연결
-    private String fileName;
-    private String filePath;
+    private Long postId;
+    private String content;
+    private String author;
 
     private LocalDateTime createdAt;
     private LocalDateTime updatedAt;

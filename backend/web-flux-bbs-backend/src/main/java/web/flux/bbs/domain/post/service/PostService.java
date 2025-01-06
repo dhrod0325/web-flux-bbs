@@ -1,4 +1,4 @@
-package web.flux.bbs.service;
+package web.flux.bbs.domain.post.service;
 
 import java.util.Comparator;
 import java.util.List;
@@ -8,11 +8,11 @@ import org.springframework.stereotype.Service;
 import org.springframework.util.ObjectUtils;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
-import web.flux.bbs.domain.Post;
-import web.flux.bbs.dto.PagedResponse;
-import web.flux.bbs.dto.PostDto;
-import web.flux.bbs.mapper.PostMapper;
-import web.flux.bbs.repository.PostRepository;
+import web.flux.bbs.domain.post.entity.Post;
+import web.flux.bbs.domain.post.dto.PagedResponse;
+import web.flux.bbs.domain.post.dto.PostDto;
+import web.flux.bbs.domain.post.mapper.PostMapper;
+import web.flux.bbs.domain.post.repository.PostRepository;
 
 @RequiredArgsConstructor
 @Slf4j

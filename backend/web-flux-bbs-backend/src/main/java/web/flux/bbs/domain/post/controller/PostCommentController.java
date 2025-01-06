@@ -1,4 +1,4 @@
-package web.flux.bbs.controller.post;
+package web.flux.bbs.domain.post.controller;
 
 import jakarta.validation.Valid;
 import java.net.URI;
@@ -14,8 +14,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
-import web.flux.bbs.dto.CommentDto;
-import web.flux.bbs.service.PostCommentService;
+import web.flux.bbs.domain.post.dto.CommentDto;
+import web.flux.bbs.domain.post.service.PostCommentService;
 
 @Slf4j
 @RequiredArgsConstructor
