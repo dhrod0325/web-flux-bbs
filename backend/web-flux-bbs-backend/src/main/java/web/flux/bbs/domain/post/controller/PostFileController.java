@@ -6,6 +6,7 @@ import org.springframework.http.codec.multipart.FilePart;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestPart;
 import org.springframework.web.bind.annotation.RestController;
 import reactor.core.publisher.Mono;
@@ -14,6 +15,7 @@ import web.flux.bbs.domain.post.service.PostFileService;
 
 @RequiredArgsConstructor
 @RestController
+@RequestMapping("/api/posts")
 public class PostFileController {
     private final PostFileService postFileService;
 
